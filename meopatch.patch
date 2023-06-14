@@ -28,13 +28,6 @@ diff -ur MEO_4.8.0_orig/smali/com/alticelabs/meo/androidtv/data/model/authentica
      iput-object v5, v0, Lcom/alticelabs/meo/androidtv/data/model/authentication/DeviceInfo;->f:Ljava/lang/String;
 --- MEO_4.8.0_orig/apktool.yml	2023-06-12 17:20:54.951451300 +0100
 +++ MEO_4.8.0/apktool.yml	2023-06-12 16:52:53.124485000 +0100
-@@ -1,5 +1,5 @@
- !!brut.androlib.meta.MetaInfo
--apkFileName: MEO_4.8.0_orig.apk
-+apkFileName: MEO_4.8.0.apk
- compressionType: false
- doNotCompress:
- - resources.arsc
 @@ -103,7 +103,7 @@
    forcedPackageId: '127'
    renameManifestPackage: null
