@@ -13,10 +13,17 @@ apktool d meo.apk
 
 ## apply patch
 
-read the patch file and change yourself or apply it using patch
+read the patch file and change yourself or apply it using patch. patch file expects the folder to name MEO_4.8.0 - created based on this version
 ```shell
 patch -p1 < meopatch.patch
 ```
+if you see "different line endings" error, just:
+```shell
+dos2unix meopatch.patch
+patch -p1 < meopatch.patch
+```
+accept the changes.
+
 ## build using apktool
 ```shell
 apktool b -f -v meo -o meo-patched.apk
