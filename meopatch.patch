@@ -1,0 +1,57 @@
+diff -ur MEO_4.8.0_orig/smali/com/alticelabs/meo/androidtv/data/model/authentication/DeviceInfo.smali MEO_4.8.0/smali/com/alticelabs/meo/androidtv/data/model/authentication/DeviceInfo.smali
+--- MEO_4.8.0_orig/smali/com/alticelabs/meo/androidtv/data/model/authentication/DeviceInfo.smali	2023-06-12 17:20:41.151148600 +0100
++++ MEO_4.8.0/smali/com/alticelabs/meo/androidtv/data/model/authentication/DeviceInfo.smali	2023-06-12 16:57:59.301342200 +0100
+@@ -222,16 +222,24 @@
+ 
+     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+ 
++    const-string v1, "NVIDIA"
++
+     iput-object v1, v0, Lcom/alticelabs/meo/androidtv/data/model/authentication/DeviceInfo;->a:Ljava/lang/String;
+ 
++    const-string v2, "SHIELD Android TV"
++
+     iput-object v2, v0, Lcom/alticelabs/meo/androidtv/data/model/authentication/DeviceInfo;->b:Ljava/lang/String;
+ 
+     move-object/from16 v1, p3
+ 
+     iput-object v1, v0, Lcom/alticelabs/meo/androidtv/data/model/authentication/DeviceInfo;->c:Ljava/lang/String;
+ 
++    const-string v3, "9.0.0"
++
+     iput-object v3, v0, Lcom/alticelabs/meo/androidtv/data/model/authentication/DeviceInfo;->d:Ljava/lang/String;
+ 
++    const-string v4, "28"
++
+     iput-object v4, v0, Lcom/alticelabs/meo/androidtv/data/model/authentication/DeviceInfo;->e:Ljava/lang/String;
+ 
+     iput-object v5, v0, Lcom/alticelabs/meo/androidtv/data/model/authentication/DeviceInfo;->f:Ljava/lang/String;
+--- MEO_4.8.0_orig/apktool.yml	2023-06-12 17:20:54.951451300 +0100
++++ MEO_4.8.0/apktool.yml	2023-06-12 16:52:53.124485000 +0100
+@@ -1,5 +1,5 @@
+ !!brut.androlib.meta.MetaInfo
+-apkFileName: MEO_4.8.0_orig.apk
++apkFileName: MEO_4.8.0.apk
+ compressionType: false
+ doNotCompress:
+ - resources.arsc
+@@ -103,7 +103,7 @@
+   forcedPackageId: '127'
+   renameManifestPackage: null
+ sdkInfo:
+-  minSdkVersion: '28'
++  minSdkVersion: '8'
+   targetSdkVersion: '31'
+ sharedLibrary: false
+ sparseResources: false
+--- MEO_4.8.0_orig/AndroidManifest.xml	2023-06-12 17:20:36.305979800 +0100
++++ MEO_4.8.0/AndroidManifest.xml	2023-06-12 16:14:43.147643200 +0100
+@@ -21,7 +21,7 @@
+     <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+     <permission android:name="com.alticelabs.meo.androidtv.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" android:protectionLevel="signature"/>
+     <uses-permission android:name="com.alticelabs.meo.androidtv.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"/>
+-    <application android:allowBackup="false" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:banner="@mipmap/app_banner" android:extractNativeLibs="false" android:hardwareAccelerated="true" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:largeHeap="true" android:logo="@mipmap/app_banner" android:name="com.alticelabs.meo.androidtv.BaseApp" android:supportsRtl="true" android:theme="@style/AppTheme" android:usesCleartextTraffic="true">
++    <application android:allowBackup="false" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:banner="@mipmap/app_banner" android:extractNativeLibs="true" android:hardwareAccelerated="true" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:largeHeap="true" android:logo="@mipmap/app_banner" android:name="com.alticelabs.meo.androidtv.BaseApp" android:supportsRtl="true" android:theme="@style/AppTheme" android:usesCleartextTraffic="true">
+         <meta-data android:name="operator_name" android:value="@string/operator_name"/>
+         <meta-data android:name="signature" android:value="MDwCHBMZI8TUfP4hBWJ3VvpEvHmT9coiM43abNo0I8oCHHzeTL0AM0iJqQMxAx4rMuf214SQACdC3nsd+ms="/>
+         <receiver android:exported="true" android:name="com.alticelabs.meo.androidtv.ui.GlobalKeyReceiver">
